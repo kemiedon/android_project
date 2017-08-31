@@ -17,4 +17,10 @@ Route::get('/', function () {
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'HomeController@index')->name('home');
+
+// mv_route_start
+Route::resource('news_categories', 'Backend\NewsCategoryController', ['parameters' => ['news_categories' => 'news_category_id']]);
+Route::get('news_categories/{news_category_id}/moveup', 'Backend\NewsCategoryController@move_up')->name('news_categories.move_up');
+Route::get('news_categories/{news_category_id}/movedown', 'Backend\NewsCategoryController@move_down')->name('news_categories.move_down');
+// mv_route_end
