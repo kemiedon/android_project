@@ -1,0 +1,25 @@
+{
+  "name": "laravel_52",
+  "description": "",
+  "main": "",
+  "authors": [
+    "MacroViz Interactive Media Design Co., Ltd."
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/_libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1",
+    "font-awesome": "^4.7.0",
+    "jquery-ui": "^1.12.1",
+    "tinymce": "^4.6.6"
+  }
+}
