@@ -15,12 +15,27 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::auth();
+// Route::auth();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Login Routes
+Route::get('admin/login', 'Auth\AuthController@showLoginForm')->name('admin.login');
+Route::post('admin/login', 'Auth\AuthController@login')->name('admin.login.post');
+Route::post('admin/logout', 'Auth\AuthController@logout')->name('admin.logout');
+
+// Registration Routes
+// Route::get('register', 'Auth\AuthController@showRegistrationForm')->name('register');
+// Route::post('register', 'Auth\AuthController@register')->name('register.post');
+
+// Password Reset Routes
+// Route::get('password/reset/{token}', 'Auth\PasswordController@showResetForm')->name('password.reset.token');
+// Route::post('password/email', 'Auth\PasswordController@sendResetLinkEmail')->name('password.email');
+// Route::post('password/reset', 'Auth\PasswordController@reset')->name('password.reset.post');
+
+Route::get('admin', 'Auth\HomeController@index');
+Route::get('admin/home', 'Auth\HomeController@index')->name('admin.home');
 
 // mv_route_start
-Route::resource('news_categories', 'Backend\NewsCategoryController', ['parameters' => ['news_categories' => 'news_category_id']]);
-Route::get('news_categories/{news_category_id}/moveup', 'Backend\NewsCategoryController@move_up')->name('news_categories.move_up');
-Route::get('news_categories/{news_category_id}/movedown', 'Backend\NewsCategoryController@move_down')->name('news_categories.move_down');
+Route::resource('admin/news_categories', 'Backend\NewsCategoryController', ['parameters' => ['news_categories' => 'news_category_id']]);
+Route::get('admin/news_categories/{news_category_id}/moveup', 'Backend\NewsCategoryController@move_up')->name('news_categories.move_up');
+Route::get('admin/news_categories/{news_category_id}/movedown', 'Backend\NewsCategoryController@move_down')->name('news_categories.move_down');
 // mv_route_end
