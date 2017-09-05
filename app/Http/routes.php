@@ -11,11 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-// Route::auth();
+
+// ========== Backend ========== //
+Route::get('admin', 'Auth\HomeController@index');
+Route::get('admin/home', 'Auth\HomeController@index')->name('admin.home');
+
+// Work with below
+Route::auth();
 
 // Login Routes
 Route::get('admin/login', 'Auth\AuthController@showLoginForm')->name('admin.login');
@@ -30,9 +36,6 @@ Route::post('admin/logout', 'Auth\AuthController@logout')->name('admin.logout');
 // Route::get('password/reset/{token}', 'Auth\PasswordController@showResetForm')->name('password.reset.token');
 // Route::post('password/email', 'Auth\PasswordController@sendResetLinkEmail')->name('password.email');
 // Route::post('password/reset', 'Auth\PasswordController@reset')->name('password.reset.post');
-
-Route::get('admin', 'Auth\HomeController@index');
-Route::get('admin/home', 'Auth\HomeController@index')->name('admin.home');
 
 // mv_route_start
 Route::resource('admin/news_categories', 'Backend\NewsCategoryController', ['parameters' => ['news_categories' => 'news_category_id']]);
