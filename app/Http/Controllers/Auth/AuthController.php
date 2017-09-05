@@ -74,14 +74,17 @@ class AuthController extends Controller
     // ========== Custom Auth ========== //
 
     /**
-    * Show the application login form.
-    *
-    * @return \Illuminate\Http\Response
-    */
+     * Show the application login form.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function showLoginForm()
     {
-        if (view()->exists('auth.authenticate')) {
-            return view('auth.authenticate');
+        $view = property_exists($this, 'loginView')
+                    ? $this->loginView : 'auth.authenticate';
+
+        if (view()->exists($view)) {
+            return view($view);
         }
 
         return view('backend/_layouts/login');
