@@ -70,4 +70,21 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+
+    // ========== Custom Auth ========== //
+
+    /**
+    * Show the application login form.
+    *
+    * @return \Illuminate\Http\Response
+    */
+    public function showLoginForm()
+    {
+        if (view()->exists('auth.authenticate')) {
+            return view('auth.authenticate');
+        }
+
+        return view('backend/_layouts/login');
+    }
+
 }

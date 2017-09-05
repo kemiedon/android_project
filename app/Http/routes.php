@@ -20,8 +20,7 @@
 Route::get('admin', 'Auth\HomeController@index');
 Route::get('admin/home', 'Auth\HomeController@index')->name('admin.home');
 
-// Work with below
-Route::auth();
+// Route::auth();
 
 // Login Routes
 Route::get('admin/login', 'Auth\AuthController@showLoginForm')->name('admin.login');

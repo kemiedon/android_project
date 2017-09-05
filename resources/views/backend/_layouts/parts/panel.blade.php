@@ -1,8 +1,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        <div>
-            <h2>@yield('page_header')</h2>
-        </div>
+
+        <h2>@yield('page_header')</h2>
 
         @if (!empty($total_rows))
         <span class="pull-right badge" draggable="true">{{ $total_rows }}</span>

@@ -8,6 +8,8 @@ return [
     'home'                    => '首頁',
     'copyright'               => '&copy; 2017 廣瞻互動媒體設計有限公司建置',
 
+    'message.welcome'         => '請從畫面右上角主選單開始操作。',
+
     'message.success.store'   => '成功新增一筆資料！',
     'message.success.update'  => '成功更新一筆資料！',
     'message.success.destroy' => '成功刪除一筆資料！',
