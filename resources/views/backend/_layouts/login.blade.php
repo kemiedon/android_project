@@ -21,13 +21,10 @@
         }
     </style>
     <script>
-
         $(function(){
-
             function set_margin_top () { $('.panel').css('margin-top', ($(window).height() - $('.panel').height()) / 2); }
             set_margin_top (); $(window).resize(function(){ set_margin_top (); });
         });
-
     </script>
 </head>
 
