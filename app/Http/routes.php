@@ -38,6 +38,6 @@ Route::post('admin/logout', 'Auth\AuthController@logout')->name('admin.logout');
 
 // mv_route_start
 Route::resource('admin/news_categories', 'Backend\NewsCategoryController', ['parameters' => ['news_categories' => 'news_category_id']]);
-Route::get('admin/news_categories/{news_category_id}/moveup', 'Backend\NewsCategoryController@move_up')->name('news_categories.move_up');
-Route::get('admin/news_categories/{news_category_id}/movedown', 'Backend\NewsCategoryController@move_down')->name('news_categories.move_down');
+Route::get('admin/news_categories/{news_category_id}/moveup', 'Backend\NewsCategoryController@move_up')->name('admin.news_categories.move_up');
+Route::get('admin/news_categories/{news_category_id}/movedown', 'Backend\NewsCategoryController@move_down')->name('admin.news_categories.move_down');
 // mv_route_end
