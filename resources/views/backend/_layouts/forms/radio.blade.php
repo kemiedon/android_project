@@ -3,7 +3,7 @@
     <div class="col-sm-10">
 @foreach ($data_provider as $radio_value => $radio_label)
         <label class="radio-inline">
-            <input type="radio" name="{{ $name }}" value="{{ $radio_value }}" {{ $radio_value === $value ? 'checked' : NULL }}>{{ $radio_label }}
+            <input type="radio" name="{{ $name }}" value="{{ $radio_value }}" {{ $radio_value == $value ? 'checked' : NULL }}>{{ $radio_label }}
         </label>
 @endforeach
         <small class="text-muted clearfix">{{ $desc }}</small>

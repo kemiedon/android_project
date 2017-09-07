@@ -4,7 +4,7 @@
         <select class="form-control" id="{{ $name }}" name="{{ $name }}">
             <option value="">---請選擇---</option>
 @foreach ($data_provider as $option_value => $option)
-            <option value="{{ $option_value }}" {{ $option_value === $value ? 'selected' : NULL }}>{{ $option }}</option>
+            <option value="{{ $option_value }}" {{ $option_value == $value ? 'selected' : NULL }}>{{ $option }}</option>
 @endforeach
         </select>
         <small class="text-muted">{{ $desc }}</small>
