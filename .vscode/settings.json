@@ -1,0 +1,6 @@
+{
+    "favorites.resources": [
+        "resources/views",
+        "app/Http/Controllers"
+    ]
+}

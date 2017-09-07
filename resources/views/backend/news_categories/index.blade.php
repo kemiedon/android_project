@@ -14,7 +14,7 @@
 
 @section('breadcrumb')
 <!-- // mv_breadcrumb_start -->
-<li>MVCategory</li>
+<li>{{ Lang::get('backend/news_categories.crud.title') }}</li>
 <!-- // mv_breadcrumb_end -->
 @stop
 
@@ -68,7 +68,7 @@
                 <!-- // mv_go_down_end -->
 
                 @if ($news_category->order != $smallest_order)
-                <a type="button" class="btn btn-default btn-sm" href="{{ route('news_categories.move_up', [$news_category->id]) }}">
+                <a type="button" class="btn btn-default btn-sm" href="{{ route('admin.news_categories.move_up', [$news_category->id]) }}">
                     <i class="fa fa-arrow-up" aria-hidden="true"></i> {{ Lang::get('app.button.move_up') }}
                 </a>
                 @else
@@ -78,7 +78,7 @@
                 @endif
 
                 @if ($news_category->order != $biggest_order)
-                <a type="button" class="btn btn-default btn-sm" href="{{route('news_categories.move_down', [$news_category->id])}}">
+                <a type="button" class="btn btn-default btn-sm" href="{{route('admin.news_categories.move_down', [$news_category->id])}}">
                     <i class="fa fa-arrow-down" aria-hidden="true"></i> {{ Lang::get('app.button.move_down') }}
                 </a>
                 @else

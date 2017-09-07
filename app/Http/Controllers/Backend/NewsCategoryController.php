@@ -9,6 +9,8 @@ use App\Http\Controllers\Controller;
 
 use App\Http\Models\NewsCategory;
 
+use Session, Validator, Lang;
+
 class NewsCategoryController extends Controller
 {
 
@@ -45,17 +47,23 @@ class NewsCategoryController extends Controller
 
         $rules = array(
             //create_validation_rules_start
-            'news_name' => 'required',
+            'name'         => 'required',
+            'check'        => 'required',
             'published_at' => 'required',
-            'picture' => 'image',
+            'category'     => 'required',
+            'description'  => 'required',
+            'picture'      => 'required',
             //create_validation_rules_end
         );
 
         $nice_names = array(
             //create_validation_nice_names_start
-            'news_name' => '名稱',
+            'name'         => '名稱',
+            'check'        => '是否儲存為草稿',
             'published_at' => '發佈日期',
-            'picture' => '新聞圖片',
+            'category'     => '新聞分類',
+            'description'  => '內容',
+            'picture'      => '新聞類別圖片',
             //create_validation_nice_names_end
         );
 
@@ -68,7 +76,7 @@ class NewsCategoryController extends Controller
             $news_category               = new NewsCategory;
 
             // mv_controller_store_start
-            $news_category->news_name    = $request->news_name;
+            $news_category->name    = $request->name;
             $news_category->published_at = $request->published_at;
             $news_category->category     = $request->category;
             $news_category->description  = $request->description;
@@ -86,8 +94,8 @@ class NewsCategoryController extends Controller
 
             $news_category->save();
 
-            Session::flash('message', '您已成功新增一筆');
-            return redirect()->route('news_categories.index');
+            Session::flash('message', Lang::get('app.message.success.store'));
+            return redirect()->route('admin.news_categories.index');
         } else {
             return redirect()->back()->withInput()->withErrors($validator);
         }
@@ -116,13 +124,13 @@ class NewsCategoryController extends Controller
 
         $rules = array(
             //edit_validation_rules_start
-            'news_name' => 'required',
+            'name' => 'required',
             //edit_validation_rules_end
         );
 
         $nice_names = array(
             //edit_validation_nice_names_start
-            'news_name' => '欄位名稱',
+            'name' => '欄位名稱',
             //edit_validation_nice_names_end
         );
 
@@ -135,7 +143,7 @@ class NewsCategoryController extends Controller
             $news_category = NewsCategory::find($id);
 
             // mv_controller_update_start
-            $news_category->news_name    = $request->news_name;
+            $news_category->name    = $request->name;
             $news_category->published_at = $request->published_at;
             $news_category->category     = $request->category;
             $news_category->description  = $request->description;
@@ -152,8 +160,8 @@ class NewsCategoryController extends Controller
 
             $news_category->save();
 
-            Session::flash('message', '您已成功編輯一筆');
-            return redirect()->route('news_categories.index');
+            Session::flash('message', Lang::get('app.message.success.update'));
+            return redirect()->route('admin.news_categories.index');
         } else {
             return redirect()->back()->withInput()->withErrors($validator);
         }
@@ -167,8 +175,8 @@ class NewsCategoryController extends Controller
         $news_category = NewsCategory::find($id);
         @unlink('uploads/news_categories/'.$news_category->picture);
         $news_category->delete();
-        Session::flash('message', '您已成功刪除一筆');
-        return redirect()->route('news_categories.index');
+        Session::flash('message', Lang::get('app.message.success.destroy'));
+        return redirect()->route('admin.news_categories.index');
     }
 
 
@@ -188,7 +196,7 @@ class NewsCategoryController extends Controller
         $current->save();
         $previous->save();
 
-        return redirect()->route('news_categories.index');
+        return redirect()->route('admin.news_categories.index');
     }
 
 
@@ -208,6 +216,6 @@ class NewsCategoryController extends Controller
         $current->save();
         $next->save();
 
-        return redirect()->route('news_categories.index');
+        return redirect()->route('admin.news_categories.index');
     }
 }

@@ -11,7 +11,7 @@ return [
     'label.published_at' => '發佈日期',
     'label.category'     => '新聞分類',
     'label.description'  => '內容',
-    'label.picture'      => '上傳圖片',
+    'label.picture'      => '新聞類別圖片',
     'label.order'        => 'Order',
     'label.created_at'   => 'Created Date Time',
     'label.updated_at'   => 'Updated Date Time',
