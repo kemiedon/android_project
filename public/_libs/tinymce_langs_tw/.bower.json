@@ -1,0 +1,12 @@
+{
+  "name": "tinymce_langs_tw",
+  "_cacheHeaders": {
+    "Content-Length": "3557",
+    "Content-Type": "application/octet-stream",
+    "Content-Disposition": "attachment; filename=\"tinymce_languages.zip\""
+  },
+  "main": "index.js",
+  "_source": "http://archive.tinymce.com/i18n/download.php?download=zh_TW",
+  "_target": "*",
+  "_originalSource": "http://archive.tinymce.com/i18n/download.php?download=zh_TW"
+}

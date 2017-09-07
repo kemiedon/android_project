@@ -1,0 +1,12 @@
+{
+  "name": "tinymce_langs_ja",
+  "_cacheHeaders": {
+    "Content-Length": "3856",
+    "Content-Type": "application/octet-stream",
+    "Content-Disposition": "attachment; filename=\"tinymce_languages.zip\""
+  },
+  "main": "index.js",
+  "_source": "http://archive.tinymce.com/i18n/download.php?download=ja",
+  "_target": "*",
+  "_originalSource": "http://archive.tinymce.com/i18n/download.php?download=ja"
+}

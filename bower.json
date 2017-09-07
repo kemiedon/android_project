@@ -1,25 +1,30 @@
 {
-  "name": "laravel_52",
-  "description": "",
-  "main": "",
-  "authors": [
-    "MacroViz Interactive Media Design Co., Ltd."
-  ],
-  "license": "MIT",
-  "homepage": "",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "public/_libs",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "bootstrap": "^3.3.7",
-    "jquery": "^3.2.1",
-    "font-awesome": "^4.7.0",
-    "jquery-ui": "^1.12.1",
-    "tinymce": "^4.6.6"
-  }
+    "name": "laravel_52",
+    "description": "",
+    "main": "",
+    "authors": [
+        "MacroViz Interactive Media Design Co., Ltd."
+    ],
+    "license": "MIT",
+    "homepage": "",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "public/_libs",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "bootstrap": "^3.3.7",
+        "jquery": "^3.2.1",
+        "font-awesome": "^4.7.0",
+        "jquery-ui": "^1.12.1",
+        "tinymce": "^4.6.6",
+        "tinymce_plugins_youTube": "http://iweb.dl.sourceforge.net/project/youtubetinymce4/youTube.zip",
+        "tinymce_langs_tw": "http://archive.tinymce.com/i18n/download.php?download=zh_TW",
+        "tinymce_langs_ja": "http://archive.tinymce.com/i18n/download.php?download=ja",
+        "sh4tinymce": "http://lab.nomadonweb.com/download/sh4tinymce",
+        "FileManager4TinyMCE": "https://github.com/2b3ez/FileManager4TinyMCE.git"
+    }
 }

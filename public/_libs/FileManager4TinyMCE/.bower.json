@@ -1,0 +1,13 @@
+{
+  "name": "FileManager4TinyMCE",
+  "homepage": "https://github.com/2b3ez/FileManager4TinyMCE",
+  "_release": "5862aba467",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "5862aba4677611a15f57528f600671f07289218e"
+  },
+  "_source": "https://github.com/2b3ez/FileManager4TinyMCE.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/2b3ez/FileManager4TinyMCE.git"
+}
