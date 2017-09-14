@@ -87,6 +87,7 @@ class NewsCategoryController extends Controller
 
             if($request->hasFile('picture') && $request->file('picture')->isValid()) {
                 $filename = rand(00000000, 99999999).".".$request->file('picture')->getClientOriginalExtension();
+                if (!file_exists('uploads')) mkdir('uploads', 0755, true);
                 if (!file_exists('uploads/news_categories')) mkdir('uploads/news_categories', 0755, true);
                 $request->file('picture')->move('uploads/news_categories', $filename);
                 $news_category->picture = $filename;
@@ -153,6 +154,7 @@ class NewsCategoryController extends Controller
             if($request->hasFile('picture') && $request->file('picture')->isValid()) {
                 @unlink('uploads/news_categories/'.$news_category->picture);
                 $filename = rand(00000000, 99999999).".".$request->file('picture')->getClientOriginalExtension();
+                if (!file_exists('uploads')) mkdir('uploads', 0755, true);
                 if (!file_exists('uploads/news_categories')) mkdir('uploads/news_categories', 0755, true);
                 $request->file('picture')->move('uploads/news_categories', $filename);
                 $news_category->picture = $filename;

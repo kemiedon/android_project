@@ -17,16 +17,21 @@
 <!-- // mv_breadcrumb_end -->
 @stop
 
+
 @section('content')
-<form method="post" enctype="multipart/form-data" action="{{ route('admin.news_categories.store') }}" class="form-horizontal" role="form">
+
+
+<form method="post" enctype="multipart/form-data" action="{{ route('admin.news_categories.update', [$news_category->id]) }}" class="form-horizontal" role="form">
     {{ csrf_field() }}
-    <!-- // mv_view_create_start -->
+    {{ method_field('PUT') }}
+
+    <!-- // mv_view_edit_start -->
 
     <!-- // mv_view_form_radio_start -->
     @include('backend/_layouts/forms/radio', [
         'name'          => 'check',
         'label'         => Lang::get('backend/news_categories.label.check'),
-        'value'         => old('check'),
+        'value'         => old('check') ?: $news_category->check,
         'desc'          => Lang::get('backend/news_categories.desc.check'),
         'data_provider' => [1 => '是', 0 => '否' ] ,
     ])
@@ -36,7 +41,7 @@
     @include('backend/_layouts/forms/select', [
         'name'          => 'category',
         'label'         => Lang::get('backend/news_categories.label.category'),
-        'value'         => old('category'),
+        'value'         => old('category') ?: $news_category->category,
         'desc'          => Lang::get('backend/news_categories.desc.category'),
         'data_provider' => [1 => '公告',2 => '活動',3 => '優惠'],
     ])
@@ -46,7 +51,7 @@
     @include('backend/_layouts/forms/text', [
         'name'          => 'name',
         'label'         => Lang::get('backend/news_categories.label.name'),
-        'value'         => old('name'),
+        'value'         => old('name') ?: $news_category->name,
         'desc'          => Lang::get('backend/news_categories.desc.name'),
     ])
     <!-- // mv_view_form_text_end -->
@@ -55,7 +60,7 @@
     @include('backend/_layouts/forms/datepicker', [
         'name'          => 'published_at',
         'label'         => Lang::get('backend/news_categories.label.published_at'),
-        'value'         => old('published_at'),
+        'value'         => old('published_at') ?: $news_category->published_at,
         'desc'          => Lang::get('backend/news_categories.desc.published_at'),
         'date_format'   => 'yy-mm-dd',
     ])
@@ -78,7 +83,7 @@
         'label'         => Lang::get('backend/news_categories.label.description'),
         'required'      => '',
         'error_message' => '',
-        'value'         => old('description'),
+        'value'         => old('description') ?: $news_category->description,
         'desc'          => Lang::get('backend/news_categories.desc.description'),
         'height'        => 360,
         'rows'          => 20,
@@ -86,7 +91,7 @@
     ])
     <!-- // mv_view_form_tinymce_end -->
 
-    <!-- // mv_view_create_end -->
+    <!-- // mv_view_edit_end -->
 
     @include('backend/_layouts/forms/submit_cancel', [
         'submit_value' => Lang::get('app.button.submit'),
