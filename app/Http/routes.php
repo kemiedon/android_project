@@ -16,6 +16,13 @@
 // });
 
 
+
+Route::get('/', 'Frontend\NewsCategoryController@news_category');
+
+
+
+
+
 // ========== Backend ========== //
 Route::get('admin', 'Auth\HomeController@index');
 Route::get('admin/home', 'Auth\HomeController@index')->name('admin.home');
