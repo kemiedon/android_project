@@ -27,32 +27,36 @@
 
 
     <!-- // mv_FR1C2_start -->
+    <?php $news_category = DB::table('news_categories')->find(1); ?>
     <style>
         #FR1C2_Left {
             background-color: #f6f6f6;
-            padding-top: 50px;
-            padding-bottom: 50px;
-            display: inline-block;
+            padding-top: 70px;
+            padding-bottom: 70px;
             color: #999;
             background-image: url('{{ asset("images/img_placeholder.jpg") }}');
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
         }
-
+        
         #FR1C2_Right {
-            padding-top: 50px;
-            padding-bottom: 50px;
+            padding-top: 70px;
+            padding-bottom: 70px;
         }
     </style>
     <div class="container-fluid">
         <div class="row">
             <div id="FR1C2_Left" class="col-sm-12 col-md-6 text-center">
-                <span class="">形象圖位置</span>
+                形象圖位置
             </div>
-            <div id="FR1C2_Right" class="col-sm-12 col-md-4 col-md-offset-1 text-left">
-                <h2>{{ $news_category->name }}</h2><br/>
-                <p>{!! $news_category->description !!}</p>
+            <div id="FR1C2_Right" class="col-sm-12 col-md-6">
+
+                <div class="col-md-10 col-md-offset-1">
+                    <h2 style="margin-bottom: 1.25em;">{{ $news_category->name }}</h2>
+                    <span class="text-justify">{!! $news_category->description !!}</span>
+                </div>
+
             </div>
         </div>
     </div>
@@ -69,29 +73,33 @@
     <style>
         #XR1C2_Left {
             background-color: #f6f6f6;
-            padding-top: 50px;
-            padding-bottom: 50px;
-            display: inline-block;
+            padding-top: 40px;
+            padding-bottom: 40px;
             color: #999;
             background-image: url('{{ asset("images/img_placeholder.jpg") }}');
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
+            /* border-left: 15px solid #fff; */
         }
-
+        
         #XR1C2_Right {
-            padding-top: 50px;
-            padding-bottom: 50px;
+            background-color: #f6f6f6;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            /* border-right: 15px solid #fff; */
         }
     </style>
     <div class="container">
         <div class="row">
             <div id="XR1C2_Left" class="col-sm-12 col-md-6 text-center">
-                <span class="">形象圖位置</span>
+                形象圖位置
             </div>
-            <div id="XR1C2_Right" class="col-sm-12 col-md-4 col-md-offset-1 text-left">
-                <h2>{{ $news_category->name }}</h2><br/>
-                <p>{!! $news_category->description !!}</p>
+            <div id="XR1C2_Right" class="col-sm-12 col-md-6">
+                <div class="col-md-10 col-md-offset-1">
+                    <h2 style="margin-bottom: 1.25em;">{{ $news_category->name }}</h2>
+                    <span class="text-justify">{!! $news_category->description !!}</span>
+                </div>
             </div>
         </div>
     </div>
@@ -101,6 +109,46 @@
         })
     </script>
     <!-- // mv_XR1C2_end -->
+
+    <p>&nbsp;</p>
+
+    <!-- // mv_XR1C4_start -->
+    <?php $news_categories = DB::table('news_categories')->get(); ?>
+    <style>
+        .XR1C4>div:first-child {
+            background-color: #f6f6f6;
+            height: 150px;
+            color: #999;
+            background-image: url('{{ asset("images/img_placeholder.jpg") }}');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        
+        .XR1C4:first-child {
+            padding-left: 0px;
+        }
+        
+        .XR1C4:last-child {
+            padding-right: 0px;
+        }
+    </style>
+    <div class="container">
+        <h2 class="col-md-12 text-center" style="margin-bottom: 1.25em;">營業項目</h2>
+
+        <div class="row">
+            @foreach($news_categories as $news_category)
+            <div class="col-md-3 XR1C4">
+                <div class="text-center">圖片位置</div>
+                <h3 class="text-left">{{ $news_category->name }}</h3>
+                <span class="text-justify">{!! substr($news_category->description, 3, 253) !!}</span>
+            </div>
+            @endforeach
+
+        </div>
+
+    </div>
+    <!-- // mv_XR1C4_end -->
 
 
 

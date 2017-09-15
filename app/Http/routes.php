@@ -17,9 +17,12 @@
 
 
 
-Route::get('/', 'Frontend\NewsCategoryController@news_category');
+// Route::get('/', 'Frontend\NewsCategoryController@news_category');
 
 
+Route::get('/', function () {
+    return view('frontend/news_categories');
+});
 
 
 
