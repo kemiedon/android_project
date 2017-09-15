@@ -84,7 +84,7 @@
         }
         
         #XR1C2_Right {
-            background-color: #f6f6f6;
+            /* background-color: #f6f6f6; */
             padding-top: 40px;
             padding-bottom: 40px;
             /* border-right: 15px solid #fff; */
@@ -129,7 +129,7 @@
             padding-left: 0px;
         }
         
-        .XR1C4:last-child {
+        .XR1C4:nth-child(4n) {
             padding-right: 0px;
         }
     </style>
