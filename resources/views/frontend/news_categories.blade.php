@@ -125,12 +125,13 @@
             background-size: cover;
         }
         
-        .XR1C4:first-child {
-            padding-left: 0px;
-        }
-        
-        .XR1C4:nth-child(4n) {
-            padding-right: 0px;
+        @media(min-width:992px) {
+            .XR1C4:first-child {
+                padding-left: 0px;
+            }
+            .XR1C4:nth-child(4n) {
+                padding-right: 0px;
+            }
         }
     </style>
     <div class="container">
