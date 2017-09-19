@@ -13,4 +13,11 @@
 <script src="{{ asset('_libs/tinymce/tinymce.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('_libs/bootstrap/dist/js/bootstrap.min.js') }}" type="text/javascript"></script>
 
+<style>
+    div.mce-fullscreen {
+        z-index: 1050;
+    }
+</style>
+
+
 @yield ('head')
