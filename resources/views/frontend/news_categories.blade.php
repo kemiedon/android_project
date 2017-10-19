@@ -45,6 +45,26 @@
         .js-global-header-scrolling {
             top: -2em; /* Height of the header */
         }
+        .row {
+        display: flex;
+        flex-wrap: wrap;
+        }
+        .row > [class*='col-'] {
+        display: flex;
+        flex-direction: column;
+        }
+        .clearfix {
+            float: none;
+            display: block;
+            content: "";
+            clear: both;
+        
+        }
+        .navbar-default{
+            box-shadow: 0px 0px 0px ;
+            -webkit-box-shadow:0px 0px 0px;
+        }
+
     </style>
     <nav class="navbar navbar-default global-header">
         <div class="container-fluid">
@@ -218,7 +238,7 @@
         }
     </style>
     <div class="container">
-        <h2 class="col-md-12 text-center" style="margin-bottom: 1.25em;">營業項目</h2>
+        <h2 class="col-md-12 text-center clearfix" style="margin-bottom: 1.25em;">營業項目</h2>
 
         <div class="row">
             @foreach($news_categories as $news_category)
@@ -233,7 +253,74 @@
 
     </div>
     <!-- // mv_XR1C4_end -->
-
+    <p>&nbsp;</p>
+    <!-- // mv_news_start -->
+    <style>
+        .News h3{
+            font-size: 0.8em;
+        }
+        .XR1C3>a:hover{
+            text-decoration: none;
+            color:#999;
+        }
+        .XR1C3>a>div:first-child {
+            height: 250px;
+            color: #999;
+            padding: 3% 5%;
+            margin-bottom: 20px
+        }
+        
+        @media(min-width:992px) {
+            .XR1C3:first-child {
+                padding-left: 0px;
+            }
+            .XR1C3:nth-child(3n) {
+                padding-right: 0px;
+            }
+            .XR1C3>a{
+                display: block;
+                width:100%;
+                height:100%;
+            }
+            .XR1C3>a>div{
+                box-shadow: 0 2px 5px 0 rgba(0,0,0,.07)
+            }
+            .XR1C3>a>div:first-child.BoxShadow{
+                box-shadow: 0 5px 10px 0 rgba(0,0,0,.07);
+                /* margin-bottom:25px; */
+            }
+        }
+    </style>
+    <div class="container News">
+        <div class="row">
+            <h2 class="col-md-12 text-center" style="margin-bottom: 1.25em;">最新消息</h2>
+            @foreach($news_categories as $news_category)
+            <div class="col-md-4 XR1C3">
+                <a href="#">
+                    <div>
+                        <h3 class="text-left">{{ $news_category->name }}</h3>
+                        <p><span>2017.10.19</span></p>
+                        <p><span class="text-justify">{!! substr($news_category->description, 3, 253) !!}</span></p>
+                        
+                    </div>
+                </a>
+            </div>
+            @endforeach
+        </div>
+    </div>
+    <script>
+    $(document).ready(function(){
+        $('.XR1C3>a').hover(function(){
+            $(this).animate({'margin-top':'-5px'},400);
+            $(this).find('div').addClass('BoxShadow');
+        },function(){
+            $(this).animate({'margin-top':'0px'},400);
+            $(this).find('div').removeClass('BoxShadow');
+        });
+    });
+    </script>
+    <!-- // mv_news_end -->
+    <p>&nbsp;</p>
     <!-- // mv_map_start -->
     <!-- <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script> -->
     <!-- </script>   -->
