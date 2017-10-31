@@ -184,6 +184,7 @@
             background-position: center;
             background-size: cover;
             /* border-left: 15px solid #fff; */
+            
         }
         
         #XR1C2_Right {
@@ -191,11 +192,13 @@
             padding-top: 40px;
             padding-bottom: 40px;
             /* border-right: 15px solid #fff; */
+            
         }
     </style>
     <div class="container">
         <div class="row">
-            <div id="XR1C2_Left" class="col-sm-12 col-md-6 text-center">
+            <div class="col-md-12">
+            <div id="XR1C2_Left" class="col-sm-12 col-md-6 text-center" >
                 形象圖位置
             </div>
             <div id="XR1C2_Right" class="col-sm-12 col-md-6">
@@ -203,6 +206,7 @@
                     <h2 style="margin-bottom: 1.25em;">{{ $news_category->name }}</h2>
                     <span class="text-justify">{!! $news_category->description !!}</span>
                 </div>
+            </div>
             </div>
         </div>
     </div>
@@ -230,10 +234,10 @@
         
         @media(min-width:992px) {
             .XR1C4:first-child {
-                padding-left: 0px;
+                /* padding-left: 0px; */
             }
             .XR1C4:nth-child(4n) {
-                padding-right: 0px;
+                /* padding-right: 0px; */
             }
         }
     </style>
@@ -254,54 +258,55 @@
     </div>
     <!-- // mv_XR1C4_end -->
     <p>&nbsp;</p>
-    <!-- // mv_news_start -->
+    <!-- // mv_XR1C3_start -->
     <style>
-        .News h3{
+        .XR1C3 h3{
             font-size: 0.8em;
         }
         .XR1C3>a:hover{
             text-decoration: none;
             color:#999;
         }
-        .XR1C3>a>div:first-child {
+        .XR1C3>a>div>div:first-child {
             height: 250px;
             color: #999;
-            padding: 3% 5%;
+            /* padding: 3% 5%; */
             margin-bottom: 20px
         }
         
         @media(min-width:992px) {
             .XR1C3:first-child {
-                padding-left: 0px;
+                /* padding-left: 0px; */
             }
             .XR1C3:nth-child(3n) {
-                padding-right: 0px;
+                /* padding-right: 0px; */
             }
             .XR1C3>a{
                 display: block;
                 width:100%;
                 height:100%;
             }
-            .XR1C3>a>div{
+            .XR1C3>a>div>div{
                 box-shadow: 0 2px 5px 0 rgba(0,0,0,.07)
             }
-            .XR1C3>a>div:first-child.BoxShadow{
+            .XR1C3>a>div>div:first-child.BoxShadow{
                 box-shadow: 0 5px 10px 0 rgba(0,0,0,.07);
                 /* margin-bottom:25px; */
             }
         }
     </style>
-    <div class="container News">
+    <div class="container ">
         <div class="row">
             <h2 class="col-md-12 text-center" style="margin-bottom: 1.25em;">最新消息</h2>
             @foreach($news_categories as $news_category)
             <div class="col-md-4 XR1C3">
                 <a href="#">
                     <div>
-                        <h3 class="text-left">{{ $news_category->name }}</h3>
+                         <div class="text-center">圖片位置</div>
+                    
                         <p><span>2017.10.19</span></p>
+                        <h3 class="text-left">{{ $news_category->name }}</h3>
                         <p><span class="text-justify">{!! substr($news_category->description, 3, 253) !!}</span></p>
-                        
                     </div>
                 </a>
             </div>
@@ -319,8 +324,99 @@
         });
     });
     </script>
-    <!-- // mv_news_end -->
+    <!-- // mv_XR1C3_end -->
     <p>&nbsp;</p>
+    <!-- // mv_XR1C2_001_start -->
+    <style>
+        .XR1C2_001 h4{
+            margin-bottom: 40px;
+        }
+        .XR1C2_001:last-child{
+            padding-right:0px;
+        }
+        .XR1C2_001>.BGI{
+            display: block;
+            width:100%;
+            height:100%;
+            background-color: #f6f6f6;
+            
+        }
+        h4{
+        font-size: 40px;
+        }
+        a{
+        color:black;
+        }
+        .XR1C2_001:first-child ul{
+            list-style-type: none;
+            padding-left:15%;
+            padding-right:10%;
+        }
+        .XR1C2_001 ul>li{
+            border-bottom:1px solid #e2e2e2;
+        }
+        .XR1C2_001 ul>li:last-child{
+            border:none;
+        }
+    </style>
+    <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 XR1C2">
+      <h4 class="col-md-12">最新消息</h4>
+      <ul>
+        <li>
+          <a href="">
+          <!-- 騰資料 -->
+            <span>data</span><span>category</span>
+            <p>content</p>
+          </a>
+        </li>
+    
+      </ul>
+    </div>
+    <div class="col-md-6 RightCol XR1C2">
+    <div class="BGI"></div>
+    </div>
+  </div>
+</div>
+
+    <!-- // mv_XR1C2_001_end -->
+  <br><br>
+    
+    <!-- // mv_XR1C2_002_start -->
+    <style>
+    .col-md-8>div{
+        background-color: #e2e2e2;
+        width: 100%;
+        height: 100%;
+    }
+    </style>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div></div>
+            </div>
+            <div class="col-md-4">
+                <h2 class=" col-md-12">Heading</h2>
+                <p class=" col-md-12">NT$ 7,640</p>
+                <hr>
+                <form class=" col-md-12">
+                    <div class="form-group">
+                        <input type="button" class="btn btn-default form-control" value="加入購物車">
+                    </div>
+                </form>
+                <div class="col-md-12">
+                <p><a href="#">查詢有庫存的店鋪 </a> | <a href="#"> 前往聯絡我們表單</a></p>
+                <hr>
+                <p><a href="#">觀看詳細說明</a></p>
+                <hr>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- // mv_XR1C2_002_end -->
+  <br><br>
     <!-- // mv_map_start -->
     <!-- <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script> -->
     <!-- </script>   -->
@@ -417,6 +513,115 @@
     </script>
     <div id="map" >&nbsp;</div>
     <!-- // mv_map_end -->
+      <br><br>
+    <!-- // mv_form_start -->
+    <style>
+    form.form-horizontal{
+        background-color: #e2e2e2;
+        border-radius:4px;
+        padding:3% 5% !important;
+    }
+    form.form-horizontal .form-group{
+        margin-bottom: 30px;
+    }
+    input{
+        height:40px;
+    }
+    </style>
+    <div class="container">
+  <div class="row">
+    <form class="form-horizontal col-md-8 col-md-offset-2">
+    <br>
+  <p>*為必填項目</p>
+    <hr>
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 ">姓名</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 ">Email</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 ">身分類別</label>
+    <div class="col-sm-10">
+      <input type="radio" name="Item" class="radio-inline"> 顧客
+      <input type="radio" name="Item" class="radio-inline"> 員工
+      <input type="radio" name="Item" class="radio-inline"> 供應商
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 ">您的意見</label>
+    <div class="col-sm-10">
+        <textarea name="" class="form-control"  id="" cols="30" rows="10"></textarea>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-5">
+      <button type="submit" class="btn btn-default form-control">確認送出</button>
+    </div>
+    <div class="col-sm-5">
+    <button type="submit" class="btn btn-default form-control">清除重填</button>
+    </div>
+    
+  </div>
+</form>
+</div>
+  </div>
+    <!-- // mv_form_end -->
+    <br><br>
+    <!-- // mv_footer_start -->
+    <style>
+    footer{
+        background: #e2e2e2;
+    }
+    </style>
+    <footer class="bd-footer text-muted">
+    <br>
+    <div class="container">
+    <div class="col-md-6 col-sm-6 col-xs-12">
+            <ul class="menu list-inline">
+                        
+                    <li>
+                    <a href="#">item1</a>
+                    </li>
+                        
+                    <li>
+                        <a href="#">item2</a>
+                    </li>
+                        
+                    <li>
+                    <a href="#">item3</a>
+                    </li>
+                        
+                    <li>
+                        <a href="#">item4 </a>
+                    </li>
+                        
+                    <li>
+                    <a href="#">item5</a>
+                    </li>
+        
+            </ul>
+        </div>
+    <hr>
+        <!-- <ul class="bd-footer-links">
+        <li><a href="https://github.com/twbs/bootstrap">GitHub</a></li>
+        <li><a href="https://twitter.com/getbootstrap">Twitter</a></li>
+        <li><a href="/examples/">Examples</a></li>
+        <li><a href="/about/history/">About</a></li>
+        </ul> -->
+        
+        <p class="col-md-12">Copyright © MYProject 2017. All right reserved.</p>
+    </div>
+</footer>
+
+    <!-- // mv_footer_end -->
 </body>
 
 </html>
