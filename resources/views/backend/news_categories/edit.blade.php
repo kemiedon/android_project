@@ -16,7 +16,13 @@
 <li>{{ Lang::get('backend/news_categories.crud.title') }}</li>
 <!-- // mv_breadcrumb_end -->
 @stop
-
+@section('utility')
+<!-- // mv_go_up_start -->
+<a href="{{ url('/') }}" class="btn btn-default btn-sm">
+    <i class="fa fa-reply"></i> {{ Lang::get('app.button.go_up', ['crud_title' => Lang::get('backend/news_categories.crud.title')]) }}
+</a>
+<!-- // mv_go_up_end -->
+@stop
 
 @section('content')
 
@@ -29,38 +35,38 @@
 
     <!-- // mv_view_form_radio_start -->
     @include('backend/_layouts/forms/radio', [
-        'name'          => 'check',
-        'label'         => Lang::get('backend/news_categories.label.check'),
-        'value'         => old('check') ?: $news_category->check,
-        'desc'          => Lang::get('backend/news_categories.desc.check'),
+        'name'          => "name",
+        'label'         => Lang::get('backend/news_categories.label.name'),
+        'value'         => old("name") ?: $news_category->name,
+        'desc'          => Lang::get('backend/news_categories.desc.name'),
         'data_provider' => [1 => '是', 0 => '否' ] ,
     ])
     <!-- // mv_view_form_radio_end -->
 
     <!-- // mv_view_form_select_start -->
     @include('backend/_layouts/forms/select', [
-        'name'          => 'category',
-        'label'         => Lang::get('backend/news_categories.label.category'),
-        'value'         => old('category') ?: $news_category->category,
-        'desc'          => Lang::get('backend/news_categories.desc.category'),
+        'name'          => "name",
+        'label'         => Lang::get('backend/news_categories.label.name'),
+        'value'         => old("name") ?: $news_category->name,
+        'desc'          => Lang::get('backend/news_categories.desc.name'),
         'data_provider' => [1 => '公告',2 => '活動',3 => '優惠'],
     ])
     <!-- // mv_view_form_select_end -->
 
     <!-- // mv_view_form_text_start -->
     @include('backend/_layouts/forms/text', [
-        'name'          => 'name',
+        'name'          => "name",
         'label'         => Lang::get('backend/news_categories.label.name'),
-        'value'         => old('name') ?: $news_category->name,
+        'value'         => old("name") ?: $news_category->name,
         'desc'          => Lang::get('backend/news_categories.desc.name'),
     ])
     <!-- // mv_view_form_text_end -->
 
     <!-- // mv_view_form_datepicker_start -->
     @include('backend/_layouts/forms/datepicker', [
-        'name'          => 'published_at',
+        'name'          => "name",
         'label'         => Lang::get('backend/news_categories.label.published_at'),
-        'value'         => old('published_at') ?: $news_category->published_at,
+        'value'         => old("name") ?: $news_category->published_at,
         'desc'          => Lang::get('backend/news_categories.desc.published_at'),
         'date_format'   => 'yy-mm-dd',
     ])
@@ -68,22 +74,35 @@
 
     <!-- // mv_view_form_picture_start -->
     @include('backend/_layouts/forms/picture', [
-        'name'          => 'picture',
-        'label'         => Lang::get('backend/news_categories.label.picture'),
+        'name'          => "name",
+        'label'         => Lang::get('backend/news_categories.label.name'),
         'delete_box'    => NULL,
         'upload_path'   => NULL,
-        'value'         => asset('uploads/news_categories/'.$picture = old('picture') ?: $news_category->picture),
-        'desc'          => Lang::get('backend/news_categories.desc.picture'),
+        'value'         => asset('uploads/news_categories/'.$news_categories = old("name") ?: $news_category->name),
+        'desc'          => Lang::get('backend/news_categories.desc.name'),
     ])
     <!-- // mv_view_form_picture_end -->
 
+    <!-- // mv_view_form_textarea_start -->
+    @include('backend/layouts/forms/textarea', [
+			'name'          => "name",
+			'label'         => Lang::get('backend/news_categories.label.name'),
+			'required'      => '',
+			'error_message' => '',
+			'value'         => Input::old("name")?: $news_category->description,
+			'desc'          => Lang::get('backend/news_categories.desc.name'),
+			'rows'          => 20,
+			'min_length'    => 5,
+		])
+    <!-- // mv_view_form_textarea_end -->
+
     <!-- // mv_view_form_tinymce_start -->
     @include('backend/_layouts/forms/tinymce', [
-        'name'          => 'description',
+        'name'          => "description",
         'label'         => Lang::get('backend/news_categories.label.description'),
         'required'      => '',
         'error_message' => '',
-        'value'         => old('description') ?: $news_category->description,
+        'value'         => old("description") ?: $news_category->description,
         'desc'          => Lang::get('backend/news_categories.desc.description'),
         'height'        => 360,
         'rows'          => 20,

@@ -10,7 +10,8 @@
     </div>
 
     <div class="panel-body">
-        @include ('backend/_layouts/parts/breadcrumbs') @if(Session::get('message'))
+        @include ('backend/_layouts/parts/breadcrumbs') 
+        @if(Session::get('message'))
         <div class="alert alert-success" role="alert">{{ Session::get('message') }}</div>
         @endif
 

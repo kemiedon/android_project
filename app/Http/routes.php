@@ -38,8 +38,8 @@ Route::post('admin/login', 'Auth\AuthController@login')->name('admin.login.post'
 Route::post('admin/logout', 'Auth\AuthController@logout')->name('admin.logout');
 
 // Registration Routes
-// Route::get('register', 'Auth\AuthController@showRegistrationForm')->name('register');
-// Route::post('register', 'Auth\AuthController@register')->name('register.post');
+Route::get('register', 'Auth\AuthController@showRegistrationForm')->name('register');
+Route::post('register', 'Auth\AuthController@register')->name('register.post');
 
 // Password Reset Routes
 // Route::get('password/reset/{token}', 'Auth\PasswordController@showResetForm')->name('password.reset.token');
