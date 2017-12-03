@@ -47,7 +47,16 @@ Route::post('register', 'Auth\AuthController@register')->name('register.post');
 // Route::post('password/reset', 'Auth\PasswordController@reset')->name('password.reset.post');
 
 // mv_route_start
-Route::resource('admin/news_categories', 'Backend\NewsCategoryController', ['parameters' => ['news_categories' => 'news_category_id']]);
+Route::resource('admin/news_categories', 'Backend\NewsCategoryController', ['names' => [
+    'index'   => 'admin.news_categories.index',
+    'create'  => 'admin.news_categories.create',
+    'store'   => 'admin.news_categories.store',
+    'edit'    => 'admin.news_categories.edit',
+    'update'  => 'admin.news_categories.update',
+    'show'    => 'admin.news_categories.show',
+    'destroy' => 'admin.news_categories.destroy',
+    
+],'parameters' => ['news_categories' => 'news_category_id']]);
 Route::get('admin/news_categories/{news_category_id}/moveup', 'Backend\NewsCategoryController@move_up')->name('admin.news_categories.move_up');
 Route::get('admin/news_categories/{news_category_id}/movedown', 'Backend\NewsCategoryController@move_down')->name('admin.news_categories.move_down');
 // mv_route_end

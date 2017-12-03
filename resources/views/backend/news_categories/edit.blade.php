@@ -65,9 +65,9 @@
     <!-- // mv_view_form_datepicker_start -->
     @include('backend/_layouts/forms/datepicker', [
         'name'          => "name",
-        'label'         => Lang::get('backend/news_categories.label.published_at'),
-        'value'         => old("name") ?: $news_category->published_at,
-        'desc'          => Lang::get('backend/news_categories.desc.published_at'),
+        'label'         => Lang::get('backend/news_categories.label.name'),
+        'value'         => old("name")?: $news_category->name,
+        'desc'          => Lang::get('backend/news_categories.desc.name'),
         'date_format'   => 'yy-mm-dd',
     ])
     <!-- // mv_view_form_datepicker_end -->
