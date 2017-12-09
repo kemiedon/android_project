@@ -13,6 +13,7 @@ class CreateNewsCategoriesTable extends Migration
     public function up()
     {
         Schema::create('news_categories', function (Blueprint $table) {
+            // mv_migrate_start
             $table->increments('id');
             $table->string('name');
             $table->integer('check');
@@ -21,6 +22,7 @@ class CreateNewsCategoriesTable extends Migration
             $table->text('description');
             $table->string('picture');
             $table->integer('order');
+            // mv_migrate_end
             $table->timestamps();
         });
     }

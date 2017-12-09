@@ -78,12 +78,12 @@
     ])
     <!-- // mv_view_form_picture_end -->
     <!-- // mv_view_form_textarea_start -->
-    @include('backend/layouts/forms/textarea', [
+    @include('backend/_layouts/forms/textarea', [
 			'name'          => "name",
 			'label'         => Lang::get('backend/news_categories.label.name'),
 			'required'      => '',
 			'error_message' => '',
-			'value'         => 	Input::old("name"),
+			'value'         => old("name"),
 			'desc'          => Lang::get('backend/news_categories.desc.name'),
 			'rows'          => 20,
 			'min_length'    => 5,

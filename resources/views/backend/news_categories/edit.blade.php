@@ -112,6 +112,7 @@
 
     <!-- // mv_view_edit_end -->
 
+    <input type="hidden" name="created_at" placeholder="" value="{{ date('Y/m/d H:i:s') }}">
     @include('backend/_layouts/forms/submit_cancel', [
         'submit_value' => Lang::get('app.button.submit'),
         'cancel_value' => Lang::get('app.button.cancel'),

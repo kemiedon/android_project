@@ -23,7 +23,7 @@ class NewsCategoryController extends Controller
     public function index()
     {
         //parent_record
-
+        
         $news_categories = NewsCategory::orderBy('order', 'asc')->get();
 
         $biggest_order   = (count($news_categories) != 0) ? NewsCategory::orderBy('order', 'desc')->first()->order : NULL;
