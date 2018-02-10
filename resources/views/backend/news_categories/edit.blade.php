@@ -78,7 +78,7 @@
         'label'         => Lang::get('backend/news_categories.label.name'),
         'delete_box'    => NULL,
         'upload_path'   => NULL,
-        'value'         => asset('uploads/news_categories/'.$news_categories = old("name") ?: $news_category->name),
+        'value'         => asset('uploads/news_categories/'.$picture = old("name") ?: $news_category->name),
         'desc'          => Lang::get('backend/news_categories.desc.name'),
     ])
     <!-- // mv_view_form_picture_end -->

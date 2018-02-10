@@ -19,17 +19,21 @@
 
 // Route::get('/', 'Frontend\NewsCategoryController@news_category');
 
+// mv_frontend_route_start
 
-Route::get('/', function () {
-    return view('frontend/news_categories');
-});
-
-
-
+    Route::get('{lang}/news_categories', function () {
+        return view('frontend/news_categories');
+    })->name('news_categories');       
+// mv_frontend_route_end
 // ========== Backend ========== //
 Route::get('admin', 'Auth\HomeController@index');
 Route::get('admin/home', 'Auth\HomeController@index')->name('admin.home');
-
+// Filemanager Routes
+Route::group(['prefix' => 'filemanager','middleware' => 'cors'], function() {
+    Route::get('show', 'FilemanagerLaravelController@getShow');
+    Route::get('connectors', 'FilemanagerLaravelController@getConnectors');
+    Route::post('connectors', 'FilemanagerLaravelController@postConnectors');
+});
 // Route::auth();
 
 // Login Routes

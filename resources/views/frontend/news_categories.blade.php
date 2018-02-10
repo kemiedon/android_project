@@ -24,6 +24,7 @@
 
 
 <body>
+    <?php $lang = (!in_array(Request::segment(1), ['en','cn','jp'])) ? 'tw' : Request::segment(1);  ?>
     <!-- // mv_navbar_start -->
     <style>
         body{
@@ -129,7 +130,7 @@
     </script>
     <!-- // mv_navbar_end -->
     <!-- // mv_FR1C2_start -->
-    <?php $news_category = DB::table('news_categories')->find(10); ?>
+    <?php $news_category = DB::table('news_categories')->find(1); ?>
     <style>
         #FR1C2_Left {
             background-color: #f6f6f6;
@@ -156,8 +157,8 @@
             <div id="FR1C2_Right" class="col-sm-12 col-md-6">
 
                 <div class="col-md-10 col-md-offset-1">
-                    <h2 style="margin-bottom: 1.25em;">{{ $news_category->name }}</h2>
-                    <span class="text-justify">{!! $news_category->description !!}</span>
+                    <h2 style="margin-bottom: 1.25em;">{{ $news_category->{$lang.'_name'} or $news_category->name}}</h2>
+                    <span class="text-justify">{!! $news_category->{$lang.'_description'} or $news_category->description !!}</span>
                 </div>
 
             </div>

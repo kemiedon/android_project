@@ -56,7 +56,14 @@
         'desc'          => Lang::get('backend/news_categories.desc.name'),
     ])
     <!-- // mv_view_form_text_end -->
-
+    <!-- // mv_view_form_hidden_start -->
+    @include('backend/_layouts/forms/hidden', [
+        'name'          => "name",
+        'label'         => Lang::get('backend/news_categories.label.name'),
+        'value'         => old("name"),
+        'desc'          => Lang::get('backend/news_categories.desc.name'),
+    ])
+    <!-- // mv_view_form_hidden_end -->
     <!-- // mv_view_form_datepicker_start -->
     @include('backend/_layouts/forms/datepicker', [
         'name'          => "name",
