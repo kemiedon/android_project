@@ -1,5 +1,5 @@
 
-<?php $news_categories = DB::table('news_categories')->get(); ?>
+<?php $news_categories = DB::table('news_categories')->data_filter; ?>
 <style>
     .XR1C4>div:first-child {
         background-color: #f6f6f6;

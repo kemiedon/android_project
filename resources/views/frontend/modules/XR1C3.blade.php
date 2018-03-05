@@ -1,4 +1,4 @@
-<?php $news_categories = DB::table('news_categories')->get(); ?>
+<?php $news_categories = DB::table('news_categories')->data_filter; ?>
 <style>
         .XR1C3 h3{
             font-size: 0.8em;

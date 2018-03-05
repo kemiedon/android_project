@@ -1,5 +1,5 @@
 
-<?php $news_category = DB::table('news_categories')->find(1); ?>
+<?php $news_categories = DB::table('news_categories')->data_filter; ?>
 <style>
         #XR1C2_Left {
             background-color: #f6f6f6;

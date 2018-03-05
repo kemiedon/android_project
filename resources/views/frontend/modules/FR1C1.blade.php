@@ -1,5 +1,5 @@
 
-<?php $news_category = DB::table('news_categories')->find($page_id); ?>
+<?php $news_category = DB::table('news_categories')->data_filter; ?>
 <style>
 
     #FR1C1 {

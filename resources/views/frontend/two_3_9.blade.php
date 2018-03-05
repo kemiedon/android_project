@@ -17,8 +17,8 @@
        <section id="Content">
            <div class="container">
                 <div class="row">
-                    <div class="col-xs-1 col-md-3 mr-5" style="background-color:#58c5f3; height:200px"></div>   
-                    <div class="col-xs-1 col-md-9" style="background-color:#b87eeb; height:200px"></div>     
+                    <div id="left" class="col-xs-1 col-md-3 mr-5" style="background-color:#58c5f3; height:200px"></div>   
+                    <div id="right" class="col-xs-1 col-md-9" style="background-color:#b87eeb; height:200px"></div>     
                 </div>
            </div>
        </section>

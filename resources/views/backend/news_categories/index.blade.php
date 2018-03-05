@@ -66,7 +66,7 @@
                     {{ Lang::get('backend/news.crud.title') }}
                 </a>
                 <!-- // mv_go_down_end -->
-
+                <!-- // mv_up_down_start -->
                 @if ($news_category->order != $smallest_order)
                 <a type="button" class="btn btn-default btn-sm" href="{{ route('admin.news_categories.move_up', [$news_category->id]) }}">
                     <i class="fa fa-arrow-up" aria-hidden="true"></i> {{ Lang::get('app.button.move_up') }}
@@ -86,7 +86,7 @@
                         <i class="fa fa-arrow-down" aria-hidden="true"></i> {{ Lang::get('app.button.move_down') }}
                 </span>
                 @endif
-
+                <!-- // mv_up_down_end -->
                 <a type="button" class="btn btn-default btn-sm" href="{{ route('admin.news_categories.edit', [$news_category->id]) }}">
                     <i class="fa fa-edit" aria-hidden="true"></i> {{ Lang::get('app.button.edit') }}
                 </a>

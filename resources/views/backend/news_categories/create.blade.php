@@ -99,11 +99,11 @@
     <!-- // mv_view_form_tinymce_start -->
     @include('backend/_layouts/forms/tinymce', [
         'name'          => "description",
-        'label'         => Lang::get('backend/news_categories.label.name'),
+        'label'         => Lang::get('backend/news_categories.label.description'),
         'required'      => '',
         'error_message' => '',
         'value'         => old("description"),
-        'desc'          => Lang::get('backend/news_categories.desc.name'),
+        'desc'          => Lang::get('backend/news_categories.desc.description'),
         'height'        => 360,
         'rows'          => 20,
         'min_length'    => 5,

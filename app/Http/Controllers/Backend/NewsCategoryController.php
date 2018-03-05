@@ -25,10 +25,10 @@ class NewsCategoryController extends Controller
         //parent_record
         
         $news_categories = NewsCategory::orderBy('order', 'asc')->get();
-
+        // mv_index_order_start
         $biggest_order   = (count($news_categories) != 0) ? NewsCategory::orderBy('order', 'desc')->first()->order : NULL;
         $smallest_order  = (count($news_categories) != 0) ? NewsCategory::orderBy('order', 'asc') ->first()->order : NULL;
-
+        // mv_index_order_end
         return view('backend/news_categories/index', compact('news_categories', 'biggest_order', 'smallest_order'));
     }
 
@@ -82,9 +82,9 @@ class NewsCategoryController extends Controller
             $news_category->description  = $request->description;
             $news_category->check        = $request->check;
             // mv_controller_store_end
-
+            // mv_create_order_start
             $news_category->order        = (NewsCategory::count() != 0) ? NewsCategory::orderBy('order', 'desc')->first()->order + 1 : 1;
-
+            // mv_create_order_end
             if($request->hasFile('picture') && $request->file('picture')->isValid()) {
                 $filename = rand(00000000, 99999999).".".$request->file('picture')->getClientOriginalExtension();
                 if (!file_exists('uploads')) mkdir('uploads', 0755, true);

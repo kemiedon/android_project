@@ -10,7 +10,7 @@
 			@endif
 		</div>
 		<!-- TinyMCS JS-->
-		<script src="{{asset('tinymce/js/tinymce/tinymce_editor.js')}}"></script>
+		<script src="{{asset('_libs/tinymce/tinymce_editor.js')}}"></script>
 
 		<script>
 			editor_config.selector = '#{{ $name }}',

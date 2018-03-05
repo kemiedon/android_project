@@ -1,4 +1,4 @@
-
+<?php $news_categories = DB::table('news_categories')->data_filter; ?>
 <style>
         .XR1C2_001 h4{
             margin-bottom: 40px;
