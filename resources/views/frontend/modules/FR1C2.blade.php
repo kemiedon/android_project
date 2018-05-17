@@ -1,5 +1,5 @@
 
-<?php $news_category = DB::table('news_categories')->data_filter; ?>
+
 <style>
     #FR1C2_Left {
         background-color: #f6f6f6;
@@ -18,6 +18,7 @@
     }
 </style>
 <!-- // mv_FR1C2_start -->
+<?php $news_category = DB::table('news_categories')->data_filter; ?>
 <div class="container-fluid">
     <div class="row">
         <div id="FR1C2_Left" class="col-sm-12 col-md-6 text-center">

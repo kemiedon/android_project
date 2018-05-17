@@ -1,5 +1,5 @@
 
-<?php $news_categories = DB::table('news_categories')->data_filter; ?>
+
 <style>
         #XR1C2_Left {
             background-color: #f6f6f6;
@@ -23,6 +23,7 @@
         }
     </style>
     <!-- // mv_XR1C2_start -->
+    <?php $news_categories = DB::table('news_categories')->data_filter; ?>
     <div class="container">
         <div class="row">
             <div class="col-md-12">

@@ -19,6 +19,7 @@
 }
 </style>
 <!-- // mv_category_start -->
+<?php $news_categories = DB::table('news_categories')->data_filter ?>
 <div class="col-xs-12 col-sm-3">
         <h4 class="PageTitle ProductPageTitle">
           <span class="sr-only">Heading</span>

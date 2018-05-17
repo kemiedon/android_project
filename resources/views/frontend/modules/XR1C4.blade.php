@@ -1,5 +1,5 @@
 
-<?php $news_categories = DB::table('news_categories')->data_filter; ?>
+
 <style>
     .XR1C4>div:first-child {
         background-color: #f6f6f6;
@@ -21,6 +21,7 @@
     }
 </style>
 <!-- // mv_XR1C4_start -->
+<?php $news_categories = DB::table('news_categories')->data_filter; ?>
 <div class="container">
     <h2 class="col-md-12 text-center clearfix" style="margin-bottom: 1.25em;">營業項目</h2>
 

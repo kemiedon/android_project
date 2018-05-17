@@ -25,11 +25,12 @@ class NewsCategoryController extends Controller
         //parent_record
         
         $news_categories = NewsCategory::orderBy('order', 'asc')->get();
+        $total_rows = count($news_categories);
         // mv_index_order_start
         $biggest_order   = (count($news_categories) != 0) ? NewsCategory::orderBy('order', 'desc')->first()->order : NULL;
         $smallest_order  = (count($news_categories) != 0) ? NewsCategory::orderBy('order', 'asc') ->first()->order : NULL;
         // mv_index_order_end
-        return view('backend/news_categories/index', compact('news_categories', 'biggest_order', 'smallest_order'));
+        return view('backend/news_categories/index', compact('news_categories', 'biggest_order', 'smallest_order', 'total_rows'));
     }
 
 

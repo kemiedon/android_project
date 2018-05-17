@@ -4,7 +4,7 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
-            @include('frontend/modules/head') 
+            @include('frontend/master_parts/head') 
     </head>
  <body>
         <?php $lang = (!in_array(Request::segment(1), [$lang_data])) ? 'tw' : Request::segment(1);  ?>
@@ -33,6 +33,9 @@
                 </div>
            </div>
        </section>
+       <!-- // mv_footer_start -->
        @include('frontend/modules/footer')
+       <!-- // mv_footer_end -->
+       @include('frontend/master_parts/js_files')
     </body>
 </html>

@@ -1,5 +1,5 @@
 
-<?php $news_category = DB::table('news_categories')->data_filter; ?>
+
 <style>
 
     #FR1C1 {
@@ -8,6 +8,7 @@
     }
 </style>
 <!-- // mv_FR1C1_start -->
+<?php $news_category = DB::table('news_categories')->data_filter; ?>
 <div class="container-fluid">
     <div class="row">
         

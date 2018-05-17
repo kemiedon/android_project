@@ -1,4 +1,4 @@
-<?php $news_categories = DB::table('news_categories')->data_filter; ?>
+
 <style>
         .col-md-8>div{
             background-color: #e2e2e2;
@@ -7,6 +7,7 @@
         }
         </style>
         <!-- // mv_XR1C2_002_start -->
+        <?php $news_categories = DB::table('news_categories')->data_filter; ?>
         <div class="container">
             <div class="row">
                 <div class="col-md-8">

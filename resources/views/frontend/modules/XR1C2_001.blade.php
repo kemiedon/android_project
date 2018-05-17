@@ -1,4 +1,4 @@
-<?php $news_categories = DB::table('news_categories')->data_filter; ?>
+
 <style>
         .XR1C2_001 h4{
             margin-bottom: 40px;
@@ -32,6 +32,7 @@
         }
     </style>
     <!-- // mv_XR1C2_001_start -->
+    <?php $news_categories = DB::table('news_categories')->data_filter; ?>
     <div class="container-fluid">
   <div class="row">
     <div class="col-md-6 XR1C2">

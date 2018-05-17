@@ -1,4 +1,4 @@
-<?php $news_categories = DB::table('news_categories')->data_filter; ?>
+
 <style>
         .XR1C3 h3{
             font-size: 0.8em;
@@ -36,6 +36,7 @@
         }
     </style>
     <!-- // mv_XR1C3_start -->
+    <?php $news_categories = DB::table('news_categories')->data_filter; ?>
     <div class="container ">
         <div class="row">
             <h2 class="col-md-12 text-center" style="margin-bottom: 1.25em;">最新消息</h2>

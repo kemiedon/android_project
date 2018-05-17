@@ -1,6 +1,6 @@
 @extends('backend/_layouts/master', [
 	'total_rows' => Lang::get('backend/news_categories.total_rows', [
-		'total_rows' => 1,
+		'total_rows' => $total_rows,
 	])
 ])
 
