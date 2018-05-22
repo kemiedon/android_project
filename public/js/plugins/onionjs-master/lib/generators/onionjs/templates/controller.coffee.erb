@@ -1,0 +1,17 @@
+define [
+  'onion/controller'
+  '<%= module_dirname %>/<%= view_basename %>'
+], (
+  Controller
+  <%= view_name %>
+) ->
+
+  class <%= controller_name %> extends Controller
+
+    typeName: -> "<%= controller_name %>"
+
+    @view <%= view_name %>
+
+    run: ->
+      @view.render()
+

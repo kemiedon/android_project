@@ -1,0 +1,18 @@
+define [
+  'onion/view'
+  'onion/mustache_view'
+  'onion/vendor/text!<%= module_dirname %>/<%= template_filename %>'
+], (
+  View
+  mustacheView
+  template
+) ->
+
+  class <%= view_name %> extends View
+
+    typeName: -> "<%= view_name %>"
+
+    @use mustacheView
+
+    render: ->
+      @renderMustache(template)

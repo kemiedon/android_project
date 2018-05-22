@@ -1,0 +1,34 @@
+{
+  "author": "Mark Evans",
+  "name": "onionjs",
+  "description": "Javascript tools for single-page apps",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/markevans/onionjs.git"
+  },
+  "scripts": {
+  },
+  "bin": {
+    "onion": "bin/onion.js"
+  },
+  "engines": {
+    "node": "~v0.6.11"
+  },
+  "dependencies": {
+    "commander": "*",
+    "mustache": "*",
+    "string": "*",
+    "mkdirp": "*",
+    "ncp": "*"
+  },
+  "devDependencies": {
+    "requirejs": "*",
+    "mocha": "*",
+    "amdefine": "*",
+    "jquery": "*",
+    "coffee-script": "*",
+    "sinon": "*",
+    "chai": "*"
+  }
+}

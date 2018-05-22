@@ -1,0 +1,19 @@
+define([
+  'onion/controller',
+  '{{{ viewRequirePath }}}'
+], function (
+  Controller,
+  {{ viewTypeName }}
+) {
+
+  return Controller.sub('{{ controllerTypeName }}')
+
+    .view({{ viewTypeName }})
+
+    .proto({
+      run: function () {
+        this.view.render()
+      }
+    })
+
+})
