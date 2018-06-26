@@ -29,11 +29,9 @@
 Route::get('admin', 'Auth\HomeController@index');
 Route::get('admin/home', 'Auth\HomeController@index')->name('admin.home');
 // Filemanager Routes
-Route::group(['prefix' => 'filemanager','middleware' => 'cors'], function() {
-    Route::get('show', 'FilemanagerLaravelController@getShow');
-    Route::get('connectors', 'FilemanagerLaravelController@getConnectors');
-    Route::post('connectors', 'FilemanagerLaravelController@postConnectors');
-});
+    Route::get('filemanager/show', 'FilemanagerLaravelController@getShow');
+    Route::get('filemanager/connectors', 'FilemanagerLaravelController@getConnectors');
+    Route::post('filemanager/connectors', 'FilemanagerLaravelController@postConnectors');
 // Route::auth();
 
 // Login Routes
