@@ -2,7 +2,7 @@
 
 return [
 
-    'name'                    => 'MVProject',
+    'name'                    => 'android_project',
 
     'cms'                     => '後台管理系統',
     'home'                    => '首頁',

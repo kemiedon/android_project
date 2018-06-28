@@ -24,7 +24,7 @@
             <ul class="nav navbar-nav navbar-right">
 
                 <!-- mv_menu_start  -->
-                <li><a href="{{ route('admin.news_categories.index') }}">{{ Lang::get('backend/news_categories.crud.title') }}</a></li>
+                                             <li><a href="{{ route('admin.team.index') }}">{{ Lang::get('backend/team.crud.title') }}</a></li>
                 <!-- mv_menu_end -->
 
                 <li class="dropdown">

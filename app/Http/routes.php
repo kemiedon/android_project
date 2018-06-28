@@ -48,17 +48,42 @@ Route::post('register', 'Auth\AuthController@register')->name('register.post');
 // Route::post('password/email', 'Auth\PasswordController@sendResetLinkEmail')->name('password.email');
 // Route::post('password/reset', 'Auth\PasswordController@reset')->name('password.reset.post');
 
-// mv_route_start
-Route::resource('admin/news_categories', 'Backend\NewsCategoryController', ['names' => [
-    'index'   => 'admin.news_categories.index',
-    'create'  => 'admin.news_categories.create',
-    'store'   => 'admin.news_categories.store',
-    'edit'    => 'admin.news_categories.edit',
-    'update'  => 'admin.news_categories.update',
-    'show'    => 'admin.news_categories.show',
-    'destroy' => 'admin.news_categories.destroy',
+Route::resource('admin/team/{team_id}/milestone/{milestone_id}/files', 'Backend\FileController', ['names' => [
+    'index'   => 'admin.files.index',
+    'create'  => 'admin.files.create',
+    'store'   => 'admin.files.store',
+    'edit'    => 'admin.files.edit',
+    'update'  => 'admin.files.update',
+    'show'    => 'admin.files.show',
+    'destroy' => 'admin.files.destroy',
     
-],'parameters' => ['news_categories' => 'news_category_id']]);
-Route::get('admin/news_categories/{news_category_id}/moveup', 'Backend\NewsCategoryController@move_up')->name('admin.news_categories.move_up');
-Route::get('admin/news_categories/{news_category_id}/movedown', 'Backend\NewsCategoryController@move_down')->name('admin.news_categories.move_down');
-// mv_route_end
+],'parameters' => ['files' => 'file_id']]);
+Route::get('admin/team/{team_id}/milestone/{milestone_id}/files/{file_id}/moveup', 'Backend\FileController@move_up')->name('admin.files.move_up');
+Route::get('admin/team/{team_id}/milestone/{milestone_id}/files/{file_id}/movedown', 'Backend\FileController@move_down')->name('admin.files.move_down');
+
+Route::resource('admin/team', 'Backend\TeamController', ['names' => [
+    'index'   => 'admin.team.index',
+    'create'  => 'admin.team.create',
+    'store'   => 'admin.team.store',
+    'edit'    => 'admin.team.edit',
+    'update'  => 'admin.team.update',
+    'show'    => 'admin.team.show',
+    'destroy' => 'admin.team.destroy',
+    
+],'parameters' => ['team' => 'team_id']]);
+Route::get('admin/team/{team_id}/moveup', 'Backend\TeamController@move_up')->name('admin.team.move_up');
+Route::get('admin/team/{team_id}/movedown', 'Backend\TeamController@move_down')->name('admin.team.move_down');
+
+Route::resource('admin/team/{team_id}/milestone', 'Backend\MilestoneController', ['names' => [
+    'index'   => 'admin.milestone.index',
+    'create'  => 'admin.milestone.create',
+    'store'   => 'admin.milestone.store',
+    'edit'    => 'admin.milestone.edit',
+    'update'  => 'admin.milestone.update',
+    'show'    => 'admin.milestone.show',
+    'destroy' => 'admin.milestone.destroy',
+    
+],'parameters' => ['milestone' => 'milestone_id']]);
+Route::get('admin/team/{team_id}/milestone/{milestone_id}/moveup', 'Backend\MilestoneController@move_up')->name('admin.milestone.move_up');
+Route::get('admin/team/{team_id}/milestone/{milestone_id}/movedown', 'Backend\MilestoneController@move_down')->name('admin.milestone.move_down');
+
