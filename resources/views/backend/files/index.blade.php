@@ -14,7 +14,7 @@
 
 @section('breadcrumb')
 <!-- // mv_breadcrumb_start -->
-<li><a href="{{ route('admin.team.index') }}" >{{ Lang::get('backend/team.crud.title') }}</a></li>
+<li><a href="{{ route('admin.teams.index') }}" >{{ Lang::get('backend/teams.crud.title') }}</a></li>
 <li><a href="{{ route('admin.milestone.index', [$team->id]) }}">{{ $team->subject }}</a></li>
 <li>{{ $team->subject }}</li><!-- // mv_breadcrumb_end -->
 @stop
